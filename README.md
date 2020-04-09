@@ -8,7 +8,7 @@
 
 `Game and game engine are made in Java.`
 
-![Our protagonist](/Res/gifs/running.png)
+![Our protagonist](/Res/gifs/running.gif)
 
 
 ![Our protagonist](/Res/Sprites/Player/player.png)
