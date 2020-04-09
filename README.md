@@ -16,3 +16,4 @@ Code, Art and Design by Jacob Stachowicz and Anton Ivarsson
 Music is made by Joel Söderström
 
 /Res/Sprites/Player/player.png
+
