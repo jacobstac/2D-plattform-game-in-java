@@ -4,12 +4,15 @@
 
 ##### Welcome to Final Hairstyle. #
 
+![The Meny screen](/Res/Backgrounds/meny.gif)
+
 `Game and game engine are made in Java.`
 
 
-![](/Res/Backgrounds/meny.gif)
+![Our protagonist](/Res/Sprites/Player/player.png)
 
 **Credits:**
 Code, Art and Design by Jacob Stachowicz and Anton Ivarsson
 Music is made by Joel Söderström
 
+/Res/Sprites/Player/player.png
