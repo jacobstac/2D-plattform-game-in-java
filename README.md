@@ -15,6 +15,8 @@
 
 This game was originally made in may 2017 aas a part of a school project at KTH Royal Institute of Technology. The main coders and designers are me and Anton Ivarson. We are accompanied by the talened music composer (and coder) Joel Södertröm. 
 
+![Our protagonist](/Res/gifs/level1.gif)
+
 ![Our protagonist](/Res/gifs/gameover.gif)
 
 **Credits:**
