@@ -7,7 +7,7 @@
 `Game and game engine are made in Java.`
 
 
-![](/Users/jacobstachowicz/Documents/FH/Final-Hairstyle-2D-Adventure-Game-in-Java/Res/Backgrounds/meny.gif)
+![](/Res/Backgrounds/meny.gif)
 
 **Credits:**
 Code, Art and Design by Jacob Stachowicz and Anton Ivarsson
