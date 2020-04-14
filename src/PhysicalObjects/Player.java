@@ -14,9 +14,6 @@ import java.util.ArrayList;
 
 /**
  * Created by Jacob on 2017-05-02.
- * Ärver från MapObject
- *
- *
  */
 public class Player extends MapObject {
 
@@ -28,7 +25,6 @@ public class Player extends MapObject {
 
     private GameStateHandler gsm;
     private Level1State lvl1;
-
 
     //platyer type variables
     private int health;
@@ -47,15 +43,10 @@ public class Player extends MapObject {
     //skapar en arraylist av lazerskott
     private ArrayList<LazerBullet> lazerBullet;
 
-
     // swordAttack
     private boolean swordAttack;
     private int swordDamage;
     private int swordRange;
-
-
-    //Gliding...? Ska vi ha med detta i början av spelet? vore nice att ha som en
-    //sak man får senare. och sen kan återkomma till tidare områden, nå ställen man inte kunde innan??
     private boolean gliding;
 
     // Animations.
@@ -72,9 +63,6 @@ public class Player extends MapObject {
             4, // GLIDING
             2, // LAZERSHOT
             8,  // SWORDATTACK
-
-
-
     };
 
     // Animation actions
@@ -86,11 +74,7 @@ public class Player extends MapObject {
     private static final int LAZERSHOT = 5;
     private static final int SWORDATTACK = 1;
 
-
-    // Constructor
     public Player(TileMap tm) {
-
-
         super(tm); //Ordnar enligt superklassen
 
         width = 30;
@@ -121,20 +105,10 @@ public class Player extends MapObject {
 
         // load sprites
         try {
-
             BufferedImage spritesheet = ImageIO.read(
-                    getClass().getResourceAsStream("/Sprites/Player/playersprites.png"
-
-
-
-                    )
-
+                    getClass().getResourceAsStream("/Sprites/Player/playersprites.png")
             );
-
             sprites = new ArrayList<BufferedImage[]>();
-
-
-
 
             for(int i=0; i < 7; i++ ) { // 7 eftersom vi har 7 animation actions
 
@@ -150,53 +124,34 @@ public class Player extends MapObject {
                                 34,
                                 height //Detta kan bli problem då alla sprites kanske inte är lika stora
                         );
-
-                    }
-                    else if (i == 5) { //eftersom när i = 6 så är spriten 60 i width inte 30 som de andra
+                    } else if (i == 5) { //eftersom när i = 6 så är spriten 60 i width inte 30 som de andra
                         bi[j] = spritesheet.getSubimage(
                                 j * 40,
                                 i * height,
                                 40,
                                 height //Detta kan bli problem då alla sprites kanske inte är lika stora
                         );
-
-                    }
-
-                    else
-                    { //eftersom när i = 6 så är spriten 60 i width inte 30 som de andra
+                    } else { //eftersom när i = 6 så är spriten 60 i width inte 30 som de andra
                         bi[j] = spritesheet.getSubimage(
                                 j * width,
                                 i * height,
                                 width,
                                 height //Detta kan bli problem då alla sprites kanske inte är lika stora
                         );
-
                     }
                 }
-
                 // mush add to the aimation
                 sprites.add(bi);
-
             }
 
         } catch(Exception e) {
-
             e.printStackTrace();
         }
-
-
 
         animation = new Animation();
         currentAction = IDLE;
         animation.setFrames(sprites.get(IDLE));
         animation.setDelay(400);
-
-
-
-
-
-
-
     }
 
 
@@ -216,7 +171,6 @@ public class Player extends MapObject {
         return maxLazer;
     }
 
-
     //keyboardinputs.
     public void setFiring() {
         firing = true;
@@ -232,12 +186,7 @@ public class Player extends MapObject {
         gliding = true;
     }
 
-
-    // som metodnamnet säger
     public void checkAttack(ArrayList<Enemy> enemies) {
-
-
-        // loop trough enemies
         for(int i = 0; i < enemies.size(); i++) {
 
             Enemy e = enemies.get(i);
@@ -246,11 +195,9 @@ public class Player extends MapObject {
             if(swordAttack){
                 if(facingRight) {
                     if(e.getx() > x && e.getx() < x + swordRange && e.gety() > y - height/2 && e.gety() < y + height/2) {
-
                         // då slå med den dammage sword fåttt
                         e.hit(swordDamage);
                     }
-
                 }
                 else {
                     if(e.getx() < x && e.getx() > x + swordRange && e.gety() > y - height/2 && e.gety() < y + height/2) {
@@ -258,11 +205,8 @@ public class Player extends MapObject {
                         // då slå med den dammage sword fåttt
                         e.hit(swordDamage);
                     }
-
                 }
-
             }
-
 
             //Lazershot
             for(int j = 0; j < lazerBullet.size(); j++) {
@@ -271,28 +215,14 @@ public class Player extends MapObject {
                     e.hit(lazerDamage);
                     lazerBullet.get(j).setHit();
                     break;
-
-
-
-
                 }
-
-
-
             }
-
         }
-
-
     }
-
-
-
 
     // should determine where the player will be next genom att läsa keyboard input
     // till exempel pressing left, nästa position är till vänder
     private void getNextPosition() {
-
         // movement
         if(left) {
             dx -= moveSpeed;
@@ -326,30 +256,21 @@ public class Player extends MapObject {
         if((currentAction == SWORDATTACK ) && !(jumping || falling)) {
            dx = 0;
         }
-
-
         // jumping
         if(jumping && !falling) {
             dy = jumpStart;
             falling = true;
         }
-
         // falling
         if(falling) {
-
             if(dy > 0 && gliding) dy += fallSpeed * 0.1;
             else dy += fallSpeed;
 
             if(dy > 0) jumping = false;
             if(dy < 0 && !jumping) dy += stopJumpSpeed; //the longer you hold jumpbutton the lnger you jump
             if(dy > maxFallSpeed) dy = maxFallSpeed;
-
-
         }
-
-
     }
-
     //Detta är tydligen rätt så komplicerat
     public void update() {
 
@@ -400,11 +321,7 @@ public class Player extends MapObject {
                 lazerBullet.remove(i);
                 i--;
             }
-
         }
-
-
-
         //set animation
         if(swordAttack) {
             if(currentAction != SWORDATTACK ) {
@@ -437,10 +354,7 @@ public class Player extends MapObject {
                 animation.setFrames(sprites.get(FALLING));
                 animation.setDelay(100);
                 width = 30;
-
             }
-
-
         }
         else if(dy < 0) {
             if(currentAction != JUMPING){
@@ -450,7 +364,6 @@ public class Player extends MapObject {
                 animation.setDelay(-1);
                 width = 30;
             }
-
         }
         else if(left || right) {
             if(currentAction != WALKING) {
@@ -466,44 +379,30 @@ public class Player extends MapObject {
                 animation.setFrames(sprites.get(IDLE));
                 animation.setDelay(400);
                 width = 30;
-
             }
         }
 
         animation.update();
-
         //Set direction
         if(currentAction != SWORDATTACK && currentAction != LAZERSHOT) {
             if(right) facingRight = false;
             if(left) facingRight = true;
-
         }
-
 
         //todo Jag försöker ordna så att man dör när man faller under banan.
 
         // if(gety() > 400) {
         // }
-
-
     }
-
-
-
 
     // Detta kommer att rita spelaren.
     public void draw(Graphics2D g) {
 
         //Detta är det första som ska köras vid varje MapObject draw
         setMapPosition();
-
-
         // Draw Lazer
         for(int i = 0; i < lazerBullet.size(); i++) {
-
-
             lazerBullet.get(i).draw(g);
-
         }
 
         // Draw player
@@ -515,7 +414,6 @@ public class Player extends MapObject {
                 return;
             }
         }
-
         //Kallar på drawmedtoden i suprklassen mapobject
         super.draw(g);
     }

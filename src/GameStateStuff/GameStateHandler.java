@@ -6,9 +6,6 @@ import Main.GameFrame;
 import java.awt.*;
 import java.util.ArrayList;
 
-/**
- *
- */
 public class GameStateHandler {
 
     private int prevState = MENUSTATE;
@@ -42,44 +39,32 @@ public class GameStateHandler {
 
     }*/
 
-
-
     public void setState(int state) {
         prevState = currentState;
         currentState = state;
 
         if(currentState==1 || currentState == 2 || currentState == 3 || currentState == 4){
-
             Game.window.setSize(new Dimension(GameFrame.WIDTHLV1*GameFrame.scaleLV1, GameFrame.HEIGHTLV1*GameFrame.scaleLV1));
-
         }else{
-
             Game.window.setSize(new Dimension(GameFrame.WIDTH*GameFrame.scale, GameFrame.HEIGHT*GameFrame.scale));
         }
-
         gameStates.get(currentState).init();
-
     }
 
     public int getCurrentState() {
-
         return currentState;
     }
 
-
     public void update() {
         gameStates.get(currentState).update();
-
     }
 
     public void draw(java.awt.Graphics2D g) {
         gameStates.get(currentState).draw(g);
-
     }
 
     public void keyPresssed(int k) {
         gameStates.get(currentState).keyPressed(k);
-
     }
 
     public int getPrevState(){

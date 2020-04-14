@@ -36,10 +36,8 @@ public class Level1State extends GameState{
     // create HUD
     private HUD hud;
 
-
     // Background
     private BackGround bg;
-
 
     private boolean SoundStarted = false;
 
@@ -154,14 +152,10 @@ public class Level1State extends GameState{
         explosions = new ArrayList<>();
 
         hud = new HUD(player);
-
-
-
     }
 
 
     /**
-     *
      * Inte fel med att köra WIDTH? Då det inte är den bredden på banan?
      */
     @Override
@@ -178,10 +172,8 @@ public class Level1State extends GameState{
         // så den rör sig lite när man gåt
         //TODO se video 6
 
-
         // attack enemies  (pass over the arrayList of enemies
         player.checkAttack(enemies);
-
 
         // update all enemies
         for(int i = 0; i < enemies.size(); i++) {
@@ -190,18 +182,12 @@ public class Level1State extends GameState{
             if(e.isDead()) {
                 enemies.remove(i);
                 i--;
-
-
                 // Jag castar om double till int här annars fungerar inte explosions.add(new Explosion
                 int intx = (int) e.getx();
                 int inty = (int) e.gety();
-
-
                 explosions.add(new Explosion(intx, inty));
             }
-
         }
-
 
         // update explosions
         for(int i = 0; i < explosions.size(); i++) {
@@ -210,18 +196,12 @@ public class Level1State extends GameState{
             if(explosions.get(i).shouldRemove()) {
                 explosions.remove(i);
             }
-
         }
-
-
-
         //TODO PAPPA FIXAR
         if(player.gety() > 400) {
             prepareStateChange();
             gsm.setState(4);
         }
-
-
     }
 
     @Override
@@ -252,20 +232,14 @@ public class Level1State extends GameState{
             // draw enemies
             for(int i = 0; i < enemies.size(); i++) {
                 enemies.get(i).draw(g);
-
             }
 
             // draw explosions
             for(int i = 0; i < explosions.size(); i++ ) {
                 explosions.get(i).draw(g);
             }
-
-
-            // draw HUD
             hud.draw(g);
         }
-
-
     }
 
     @Override
@@ -287,16 +261,12 @@ public class Level1State extends GameState{
             }
         }
 
-
         if(k == KeyEvent.VK_ESCAPE){
             prepareStateChange();
             gsm.setState(2);
-
         }
 
-
         if(k == KeyEvent.VK_SPACE){
-
         }
     }
     @Override
@@ -308,8 +278,6 @@ public class Level1State extends GameState{
         if(k == KeyEvent.VK_DOWN) player.setDown(false);
         if(k == KeyEvent.VK_SPACE) player.setJumping(false);
         if(k == KeyEvent.VK_E) player.setGliding(false);
-
-
     }
     private void prepareStateChange(){
         player.stopPlayer();
@@ -318,8 +286,5 @@ public class Level1State extends GameState{
         BGSong.stop();
         counter= 0;
         SoundStarted = false;
-
     }
-
-
 }

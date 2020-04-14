@@ -14,18 +14,14 @@ public class MenuState extends GameState {
 
     private int counter = 0;
 
-    //Saker för bakgrundsmusik
-
     private SoundClip MenuSong = new SoundClip("/Audio/MenuSong1.mp3");
 
-    //saker för options
     private int currentChoice = 0;
 
     private String[] options = {
             "Start",
             "Options",
             "Quit",
-
     };
 
     //Saker för bakgrundsbild
@@ -76,7 +72,6 @@ public class MenuState extends GameState {
         }
 
         this.gsm = gsm;
-
         try{
             gifTest = new GifBackground(urlsBg,8);
             fontForOptions = new Font("Century Gothic", Font.PLAIN, 12);
@@ -91,24 +86,16 @@ public class MenuState extends GameState {
         if(OptionsState.SoundOptions[OptionsState.currentSoundChoice].equals("On")){
             MenuSong.loop();
         }
-
     }
 
     @Override
     public void update() {
-
-
-
-
-
     }
 
     @Override
     public void draw(Graphics2D g) {
 
         gifTest.drawNext(g);
-
-
         g.setFont(fontForOptions);
 
         for (int i = 0; i < options.length; i++) {
@@ -135,7 +122,6 @@ public class MenuState extends GameState {
         if(currentChoice == options.length-1){
             System.exit(0);
         }
-
     }
 
     @Override
@@ -164,12 +150,10 @@ public class MenuState extends GameState {
                 currentChoice = options.length - 1;
             }
         }
-
     }
 
     @Override
     public void keyReleased(int k) {
-
     }
 
 }

@@ -2,12 +2,10 @@ package PhysicalObjects;
 
 import java.awt.image.BufferedImage;
 
-/**
- * Created by Jacob on 2017-05-02.
- *  Allt den här klassen gör är att hantera sprite-animations
+/*
+ * Sprite animations class
  */
 public class Animation {
-
 
     private BufferedImage[]  frames;
     private int currentFrame;
@@ -16,20 +14,12 @@ public class Animation {
     private long startTime;
     private long delay;
 
-
-    // Visar om animationen skett. Detta är nyttigt till exempel vid ATTACK
-    // Då den bara behöver ske en gång
+    // Shows if the animation has occured
     private boolean playedOnce;
 
-
-    // Constructor
     public Animation() {
-
         playedOnce = false;
-
-
     }
-
 
     public void setFrames(BufferedImage[] frames) {
 
@@ -65,8 +55,6 @@ public class Animation {
             currentFrame = 0;
             playedOnce = true;
         }
-
-
     }
 
     public int getFrame() {
@@ -82,10 +70,6 @@ public class Animation {
     public boolean hasPlayedOnce() {
         return playedOnce;
     }
-
-
-
-
 }
 
 

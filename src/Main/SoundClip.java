@@ -5,13 +5,6 @@ import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 
-
-
-/**
- *
- * Klass som är till för att spela ljud
- */
-
 public class SoundClip{
     private Clip clip;
 
@@ -30,8 +23,6 @@ public class SoundClip{
             e.printStackTrace();
         }
     }
-
-
     public void loop(){
         clip.setFramePosition(0);
         clip.loop(Clip.LOOP_CONTINUOUSLY);
@@ -42,13 +33,10 @@ public class SoundClip{
             clip.stop();
         }
     }
-
-
     public void play() {
         if(clip == null)return;
         clip.setFramePosition(0);
         clip.start();
-
     }
 
 }

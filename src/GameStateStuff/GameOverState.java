@@ -30,34 +30,25 @@ public class GameOverState extends GameState {
             "/Backgrounds/GAMEOVER/gameover0008.png",
             "/Backgrounds/GAMEOVER/gameover0009.png",
             "/Backgrounds/GAMEOVER/gameover0010.png",
-
-
     };
 
 
     public GameOverState(GameStateHandler gsm){
-
         this.gsm = gsm;
         bg = new BackGround("/Backgrounds/GAMEOVER/gameover0010.png");
         gifBackground = new GifBackground(urls,GifFPS);
         GameOverSong = new SoundClip("/Audio/GAMEOVERSONGALT2.mp3");
-
-
     }
-
-
 
     @Override
     public void init() {
         if(OptionsState.SoundOptions[OptionsState.currentSoundChoice].equals("On")){
             GameOverSong.loop();
         }
-
     }
 
     @Override
     public void update() {
-
     }
 
     @Override
@@ -67,8 +58,6 @@ public class GameOverState extends GameState {
         }else{
             gifBackground.drawNextAndStop(g);
         }
-
-
     }
 
     @Override
@@ -78,14 +67,10 @@ public class GameOverState extends GameState {
             GameOverSong.stop();
             gifBackground.setPlayedOnce(false);
             gsm.setState(0);
-
         }
-
     }
 
     @Override
     public void keyReleased(int k) {
-
     }
-
 }

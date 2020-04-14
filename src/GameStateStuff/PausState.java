@@ -36,12 +36,10 @@ public class PausState extends GameState {
 
     @Override
     public void init() {
-
     }
 
     @Override
     public void update() {
-
     }
 
     @Override
@@ -59,7 +57,6 @@ public class PausState extends GameState {
             }
             g.drawString(options[i], 145, 140 + i * 15);
         }
-
     }
 
     @Override
@@ -72,7 +69,6 @@ public class PausState extends GameState {
         if(k == KeyEvent.VK_ENTER){
             select();
         }
-
 
         if(k == KeyEvent.VK_DOWN){
             //MenuSong.play(klickSound);
@@ -90,11 +86,9 @@ public class PausState extends GameState {
             }
         }
 
-
         if(k == KeyEvent.VK_ESCAPE){
             gsm.setState(0);
         }
-
     }
 
     @Override

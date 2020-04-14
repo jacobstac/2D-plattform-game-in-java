@@ -45,16 +45,11 @@ public class ConfirmBox {
         VBox layout = new VBox(10);
         layout.getChildren().addAll(label1,yesButton,noButton);
 
-
         layout.setAlignment(Pos.CENTER);
 
         Scene scene = new Scene(layout);
-        //scene.getStylesheets().add("ken.css");
         window.setScene(scene);
         window.showAndWait();
-
-
         return answer;
-
     }
 }

@@ -1,6 +1,5 @@
 package PhysicalObjects;
 
-
 import MapStuff.TileMap;
 
 /**
@@ -20,14 +19,9 @@ public abstract class Enemy extends MapObject {
     protected boolean flinching;
     protected long flinchTimer;
 
-
-
     public Enemy(TileMap tm) {
-
         super(tm);
-
     }
-
 
     public boolean isDead() {
         return dead;
@@ -48,16 +42,10 @@ public abstract class Enemy extends MapObject {
         //aannars:
         flinching = true;
         flinchTimer = System.nanoTime();
-
-
-
     }
 
     public void update() {
-
     }
-
-
 
 }
 

@@ -10,17 +10,11 @@ import java.awt.image.BufferedImage;
 
 /**
  * Created by Jacob on 2017-05-04.
- *
- * test fiendeklass
- * Detta är en grundläggande fiende som rör sig mellan väggar fram och tillbaka
  * Skapas i init i level1State
-
  */
 public class Sten extends Enemy {
 
-    // Fields
-
-
+   
     // double tid1 = System.nanoTime();
     //Vi behöver en array som håller i alla spritebilder
     private BufferedImage[] sprites;
@@ -46,15 +40,9 @@ public class Sten extends Enemy {
         health = 2;
         damage = 1;
 
-
-        // load sprites
         try {
-
-
-
             BufferedImage spritesheet = ImageIO.read(
                     getClass().getResourceAsStream("/Sprites/Enemies/slugger.png")
-
             );
 
             sprites = new BufferedImage[2];
@@ -66,8 +54,6 @@ public class Sten extends Enemy {
                         height
                 );
             }
-
-
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -78,7 +64,6 @@ public class Sten extends Enemy {
 
         right = true;
         facingRight = true;
-
     }
 
     /**

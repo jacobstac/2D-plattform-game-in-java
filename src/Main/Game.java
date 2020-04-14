@@ -10,8 +10,6 @@ import java.awt.image.BufferStrategy;
 public class Game {
 
     public static JFrame window;
-
-
     public static void main(String[] args){
 
         window = new JFrame("A Bad Hair day");
@@ -20,8 +18,5 @@ public class Game {
         window.setResizable(false); //Just nu ska fönstret gå att justera
         window.pack();
         window.setVisible(true);
-
     }
-
-
 }

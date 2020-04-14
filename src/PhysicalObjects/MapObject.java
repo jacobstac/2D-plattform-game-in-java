@@ -79,13 +79,10 @@ public abstract class MapObject {
     protected double jumpStart; //Hur högt objekt kan hoppa
     protected double stopJumpSpeed; //Bror på hur länge man håller i hoppknappem
 
-
     //Constructor
     public MapObject(TileMap tm) {
-
         tileMap = tm;
         tileSize = tm.getTileSize();
-
     }
 
     //Kollar om den kan krocka med andra kartObjekt
@@ -110,8 +107,6 @@ public abstract class MapObject {
     }
     //
     public void calculateCorners(double x, double y) {
-
-
 
        //ta reda på
         int leftTile = (int)(x - cwidth / 2) / tileSize;
@@ -147,8 +142,6 @@ public abstract class MapObject {
 
     //Kollar om vi har springit in i normal eller blocked tile
     public void checkTileMapCollision() {
-
-
         //först måste vi kolla vilken kolonn vi är på
         currCol = (int)x / tileSize;
         //rad
@@ -176,9 +169,7 @@ public abstract class MapObject {
             }else {
                 //Annars är vi fria att fortsätta i den riktningen
                 ytemp += dy;
-
             }
-
         }
         //NU är vi påväg ner
         if(dy > 0) {
@@ -191,13 +182,10 @@ public abstract class MapObject {
                 falling = false;
                 //+1 då vi hamnat precis på en tile
                 ytemp = (currRow + 1) * tileSize - cheight /2;
-
             }else {
                 //Annars är vi fria att falla
                 ytemp += dy;
-
             }
-
         }
 
         calculateCorners(xdest, y);
@@ -230,13 +218,8 @@ public abstract class MapObject {
             //om vi inte står på "solid ground":
             if(!bottomRight && !bottomLeft) {
                 falling = true;
-
             }
-
         }
-
-
-
     }
 
 
@@ -269,7 +252,6 @@ public abstract class MapObject {
     }
 
     public void setVector (double dx, double dy) {
-
         this.dx = dx;
         this.dy = dy;
     }
@@ -280,7 +262,6 @@ public abstract class MapObject {
     public void setMapPosition() {
         xmap = tileMap.getX();
         ymap = tileMap.getY();
-
         //hjälper oss att rita personen. om vå gubbe är utanför banan.
     }
 
@@ -320,7 +301,6 @@ public abstract class MapObject {
                     (int)(x + xmap - width / 2),
                     (int)(y + ymap - height / 2),
                     null
-
             );
         }
         else {
@@ -331,18 +311,7 @@ public abstract class MapObject {
                     -width,
                     height,
                     null
-
-
-
             );
         }
     }
-
-
-
-
-
-
-
-
 }

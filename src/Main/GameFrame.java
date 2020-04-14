@@ -22,7 +22,6 @@ public class GameFrame extends JPanel implements KeyListener, Runnable {
     public static int HEIGHTLV1 = WIDTHLV1 / 16 * 9;
     public static int scaleLV1 = 2;
 
-
     private static final long serialVersionUID = -7488199732910386374L;
 
     //Main spel-tråd

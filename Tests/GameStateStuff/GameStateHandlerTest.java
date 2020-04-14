@@ -13,7 +13,5 @@ public class GameStateHandlerTest {
         assertEquals(0, gsm.getCurrentState());
         //gsm.setState(1); // need to pass these tests
         //assertEquals(1, gsm.getCurrentState());
-
     }
-
 }

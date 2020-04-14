@@ -58,10 +58,7 @@ public class OptionsState extends GameState {
             "1920 x 1080",
     };
 
-
-
     private int currentChoice = 0;
-
 
     @Override
     public void init() {
@@ -77,7 +74,6 @@ public class OptionsState extends GameState {
     public void draw(Graphics2D g) {
 
         bg.draw(g);
-
         g.setFont(fontForOptions);
 
         for (int i = 0; i < options.length; i++) {
@@ -89,16 +85,10 @@ public class OptionsState extends GameState {
             }
             g.drawString(options[i], 145, 140 + i * 15);
         }
-
-
         g.setColor(Color.BLACK);
         g.drawString(SoundOptions[currentSoundChoice], 245 , 140);
         g.drawString(DiffOptions[currentDiffChoice],245, 155);
         g.drawString(FrameOptions[currentFrameChoiche],245,170);
-
-
-
-
     }
 
     @Override
@@ -132,12 +122,10 @@ public class OptionsState extends GameState {
         if(k == KeyEvent.VK_ESCAPE){
             gsm.setState(0);
         }
-
     }
 
     @Override
     public void keyReleased(int k) {
-
     }
 
     public void select(){
@@ -172,6 +160,5 @@ public class OptionsState extends GameState {
         if(currentChoice == options.length-1){
             gsm.setState(gsm.getPrevState());
         }
-
     }
 }

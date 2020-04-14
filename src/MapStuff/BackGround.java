@@ -10,7 +10,6 @@ import java.awt.image.BufferedImage;
 public class BackGround {
 
     private BufferedImage image;
-
     private double x = 0;
     private double y = 0;
 

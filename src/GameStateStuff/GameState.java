@@ -1,9 +1,5 @@
 package GameStateStuff;
 
-
-/**
- * Created by Antonivar on 2017-04-20.
- */
 public abstract class GameState {
 
     protected GameStateHandler gsm;
@@ -19,5 +15,4 @@ public abstract class GameState {
     public abstract void keyReleased(int k);
 
     //public abstract void playBackgroundMusic();
-
 }

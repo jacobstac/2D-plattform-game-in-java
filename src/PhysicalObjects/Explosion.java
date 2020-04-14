@@ -6,12 +6,9 @@ import java.awt.image.BufferedImage;
 
 /**
  * Created by Jacob on 2017-05-18.
- *
- * Explosion som sker när en fiende dör
+ * Class that handles the explosion that occurs when a enemy dies
  */
 public class Explosion {
-
-
 
     private int x;
     private int y;
@@ -59,14 +56,12 @@ public class Explosion {
         animation = new Animation();
         animation.setFrames(sprites);
         animation.setDelay(70);
-
     }
 
     public void update() {
         animation.update();
         if(animation.hasPlayedOnce()) {
             remove = true;
-
         }
     }
 
@@ -77,7 +72,6 @@ public class Explosion {
     public void setMapPosition(int x, int y) {
         xmap = x;
         ymap = y;
-
     }
 
     public void draw(Graphics2D g) {
@@ -87,10 +81,5 @@ public class Explosion {
                 y + ymap - height/2,
                 null
         );
-
     }
-
-
-
-
 }
