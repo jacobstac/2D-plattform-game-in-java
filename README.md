@@ -2,9 +2,9 @@
 # A 2D-plattform game demo in Java.
 ###### A mindbuzzling adventure in the final days of the world, where our protagonist will do anything to die with the best hairstyle ever.
 **Credits:**
-Code, Art and Design by Jacob Stachowicz and Anton Ivarsson
-Music is made by Joel Söderström
-Everything from the art, music to code is made by us
+###### Code, Art and Design by Jacob Stachowicz and Anton Ivarsson
+###### Music is made by Joel Söderström
+###### Everything from the art, music to code is made by us
 
 ##### Welcome to Final Hairstyle. #
 
